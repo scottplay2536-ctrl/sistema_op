@@ -1,0 +1,12 @@
+{
+  "name": "devops-azure-app",
+  "version": "1.0.0",
+  "description": "Aplicacion demo para proyecto DevOps en Azure",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

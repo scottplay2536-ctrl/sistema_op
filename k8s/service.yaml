@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: devops-azure-app-service
+  namespace: devops-demo
+spec:
+  type: LoadBalancer
+  selector:
+    app: devops-azure-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
