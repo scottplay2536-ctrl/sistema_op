@@ -34,4 +34,4 @@ if (require.main === module) {
 
 module.exports = { handleRequest };
 
-// Forzar recompilacion nativa x86 en la nube para Azure AKS v1.0.1
+// Forzar recompilacion nativa x86 en la nube para Azure AKS v1.0.2
