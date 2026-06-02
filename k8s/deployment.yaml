@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: devops-azure-app
-          image: REPLACE_ACR_LOGIN_SERVER/devops-azure-app:latest
+          image: REPLACE_ACR_LOGIN_SERVER/devops-azure-app:v2
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
