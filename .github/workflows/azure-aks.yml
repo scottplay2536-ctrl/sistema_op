@@ -36,31 +36,21 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Login to Azure Container Registry (Docker Auth)
-        uses: azure/docker-login@v1
-        with:
-          login-server: ${{ secrets.ACR_LOGIN_SERVER }}
-          username: ${{ secrets.REGISTRY_USERNAME }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
+      - name: Login to Azure Container Registry
+        run: az acr login --name ${{ secrets.ACR_NAME }}
 
-      # NUEVO: Configurar emulador para compilar en ARM64 de forma nativa
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-
-      # NUEVO: Configurar constructor avanzado de Docker
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      # MODIFICADO: Forzar compilacion para la plataforma ARM64 de Azure
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
           context: .
-          platforms: linux/arm64
+          platforms: linux/amd64
           push: true
           tags: |
             ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
-            ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:v2
+            ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:latest
 
       - name: Get AKS credentials
         run: |
