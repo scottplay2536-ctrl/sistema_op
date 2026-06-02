@@ -10,10 +10,10 @@ function sendJson(res, statusCode, payload) {
 function handleRequest(req, res) {
   if (req.url === "/") {
     sendJson(res, 200, {
-    service: "Proyecto DevOps en Azure",
-    status: "ok",
-    platform: "AKS",
-    message: "Aplicacion desplegada correctamente"
+      service: "Proyecto DevOps en Azure",
+      status: "ok",
+      platform: "AKS",
+      message: "Aplicacion desplegada correctamente"
     });
     return;
   }
@@ -33,3 +33,5 @@ if (require.main === module) {
 }
 
 module.exports = { handleRequest };
+
+// Forzar recompilacion nativa x86 en la nube para Azure AKS v1.0.1
