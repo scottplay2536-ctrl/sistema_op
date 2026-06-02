@@ -5,10 +5,10 @@
 ## 1. Variables base
 
 ```bash
-RESOURCE_GROUP=rg-devops-demo
+RESOURCE_GROUP=rg-sistema-op
 LOCATION=eastus
-ACR_NAME=acrdevopsdemo123
-AKS_NAME=aks-devops-demo
+ACR_NAME=acrsistemaop2536
+AKS_NAME=aks-sistema-op
 APP_NAME=devops-azure-app
 NAMESPACE=devops-demo
 ```
@@ -150,10 +150,10 @@ Crea estos secrets:
 
 ```text
 AZURE_CREDENTIALS = JSON completo del Service Principal
-AZURE_RESOURCE_GROUP = rg-devops-demo
-AKS_CLUSTER_NAME = aks-devops-demo
-ACR_NAME = acrdevopsdemo123
-ACR_LOGIN_SERVER = acrdevopsdemo123.azurecr.io
+AZURE_RESOURCE_GROUP = rg-sistema-op
+AKS_CLUSTER_NAME = aks-sistema-op
+ACR_NAME = acrsistemaop2536
+ACR_LOGIN_SERVER = acrsistemaop2536.azurecr.io
 ```
 
 ## 10. Ejecutar pipeline
